@@ -10,7 +10,7 @@ class llStack {
 public:
     llStack() { head = NULL; };     // Constant
 
-    void push(string val) {         // Constant
+    void push( string val ) {         // Constant
         node *temp;
         temp->data = val;
         temp->next = head;
