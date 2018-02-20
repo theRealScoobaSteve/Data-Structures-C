@@ -1,3 +1,3 @@
-C:/Users/steph/Desktop/Data-Structures-C/Data Structures/Stacks-Queues/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/steph/Desktop/Data-Structures-C/Data Structures/Stacks-Queues/cmake-build-debug/CMakeFiles/Stacks_Queues.dir
-C:/Users/steph/Desktop/Data-Structures-C/Data Structures/Stacks-Queues/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/cmake-build-debug/CMakeFiles/Stacks_Queues.dir
+C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/cmake-build-debug/CMakeFiles/edit_cache.dir

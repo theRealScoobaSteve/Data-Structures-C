@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/steph/Desktop/Data-Structures-C/Data Structures/Stacks-Queues
+# Install script for directory: C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/steph/Desktop/Data-Structures-C/Data Structures/Stacks-Queues/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
