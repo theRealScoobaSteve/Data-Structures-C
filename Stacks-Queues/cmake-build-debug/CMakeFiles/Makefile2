@@ -65,7 +65,7 @@ CMAKE_BINARY_DIR = C:\Users\steph\Desktop\Data-Structures-C\Stacks-Queues\cmake-
 CMakeFiles/Stacks_Queues.dir/all:
 	$(MAKE) -f CMakeFiles\Stacks_Queues.dir\build.make CMakeFiles/Stacks_Queues.dir/depend
 	$(MAKE) -f CMakeFiles\Stacks_Queues.dir\build.make CMakeFiles/Stacks_Queues.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\steph\Desktop\Data-Structures-C\Stacks-Queues\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target Stacks_Queues"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\steph\Desktop\Data-Structures-C\Stacks-Queues\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target Stacks_Queues"
 .PHONY : CMakeFiles/Stacks_Queues.dir/all
 
 # Include target in all.
@@ -75,7 +75,7 @@ all: CMakeFiles/Stacks_Queues.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Stacks_Queues.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\steph\Desktop\Data-Structures-C\Stacks-Queues\cmake-build-debug\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\steph\Desktop\Data-Structures-C\Stacks-Queues\cmake-build-debug\CMakeFiles 2
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Stacks_Queues.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\steph\Desktop\Data-Structures-C\Stacks-Queues\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/Stacks_Queues.dir/rule

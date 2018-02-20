@@ -82,7 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/llQueue.cpp">
+		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/arStack.h">
 			<Option target="Stacks_Queues"/>
 		</Unit>
 		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/llQueue.h">
@@ -92,6 +92,9 @@
 			<Option target="Stacks_Queues"/>
 		</Unit>
 		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/main.cpp">
+			<Option target="Stacks_Queues"/>
+		</Unit>
+		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/node.h">
 			<Option target="Stacks_Queues"/>
 		</Unit>
 		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/CMakeLists.txt">

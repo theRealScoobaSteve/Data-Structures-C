@@ -4,43 +4,35 @@
 
 #ifndef STACKS_QUEUES_LLSTACK_H
 #define STACKS_QUEUES_LLSTACK_H
-#include <string>
-#include <iostream>
-using namespace std;
+#include "node.h"
 
 class llStack {
 public:
-    class node {
-    public:
-        string data;
-        node *next;
-    };
+    llStack() { head = NULL; };     // Constant
 
-    llStack() { head = NULL; };
-
-    void push(string val) {
+    void push(string val) {         // Constant
         node *temp;
         temp->data = val;
         temp->next = head;
         head = temp;
     };
 
-    void pop() {
+    void pop() {                    // Constant
         node *temp = head;
         head = head->next;
         cout << temp->data;
         delete temp;
     }
 
-    string top() {
+    string top() {                  // Constant
         return head->data;
     }
 
-    bool isEmpty() {
+    bool isEmpty() {                // Constant
         return head == NULL;
     }
 
-    ~llStack() {
+    ~llStack() {                    // N
         while( head != NULL ) {
             pop();
         }
