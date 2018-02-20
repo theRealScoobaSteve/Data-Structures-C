@@ -10,32 +10,32 @@ using namespace std;
 
 class arStack {
 public:
-    arStack() { front=0; data[100]; };
+    arStack() { front=0; data[100]; };          // N
 
-    void push( string val ) {
+    void push( string val ) {                   // N
         if( !isEmpty() ) {
             front++;
         }
         data[front] = val;
     }
 
-    void pop() {
+    void pop() {                                // N
         front--;
     }
 
-    string top() {
+    string top() {                              // N
         return data[front];
     }
 
-    bool isEmpty() {
+    bool isEmpty() {                            // N
         return data[front] ==  "";
     }
 
-    bool isFull() {
+    bool isFull() {                             // N
         return front == 99;
     }
 
-    ~arStack() { front = 0; data[front] = ""; }
+    ~arStack() { front = 0; data[front] = ""; } // N
 private:
     int front;
     string data[];

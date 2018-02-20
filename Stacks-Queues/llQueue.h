@@ -10,7 +10,7 @@ class llQueue {
 public:
     llQueue(){ head = NULL; tail = NULL; }; // Constant
 
-    void enq(string val) {                  // Constant
+    void enq( string val ) {                  // Constant
         node *temp;
         temp->data = val;
 

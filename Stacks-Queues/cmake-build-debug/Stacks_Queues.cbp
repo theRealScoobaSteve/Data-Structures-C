@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/arQueue.h">
+			<Option target="Stacks_Queues"/>
+		</Unit>
 		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/arStack.h">
 			<Option target="Stacks_Queues"/>
 		</Unit>
