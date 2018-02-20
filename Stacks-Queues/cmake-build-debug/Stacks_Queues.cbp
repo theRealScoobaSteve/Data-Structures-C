@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/llQueue.cpp">
+			<Option target="Stacks_Queues"/>
+		</Unit>
+		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/llQueue.h">
+			<Option target="Stacks_Queues"/>
+		</Unit>
 		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Stacks-Queues/llStack.h">
 			<Option target="Stacks_Queues"/>
 		</Unit>

@@ -5,10 +5,17 @@
 #ifndef STACKS_QUEUES_LLSTACK_H
 #define STACKS_QUEUES_LLSTACK_H
 #include <string>
+#include <iostream>
 using namespace std;
 
 class llStack {
 public:
+    class node {
+    public:
+        string data;
+        node *next;
+    };
+
     llStack() { head = NULL; };
 
     void push(string val) {
@@ -21,19 +28,25 @@ public:
     void pop() {
         node *temp = head;
         head = head->next;
-        
+        cout << temp->data;
+        delete temp;
+    }
+
+    string top() {
+        return head->data;
     }
 
     bool isEmpty() {
         return head == NULL;
     }
 
+    ~llStack() {
+        while( head != NULL ) {
+            pop();
+        }
+    }
+
 private:
-    class node {
-    public:
-        string data;
-        node *next;
-    };
     node *head;
 };
 

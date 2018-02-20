@@ -122,6 +122,33 @@ Stacks_Queues/fast:
 	$(MAKE) -f CMakeFiles\Stacks_Queues.dir\build.make CMakeFiles/Stacks_Queues.dir/build
 .PHONY : Stacks_Queues/fast
 
+llQueue.obj: llQueue.cpp.obj
+
+.PHONY : llQueue.obj
+
+# target to build an object file
+llQueue.cpp.obj:
+	$(MAKE) -f CMakeFiles\Stacks_Queues.dir\build.make CMakeFiles/Stacks_Queues.dir/llQueue.cpp.obj
+.PHONY : llQueue.cpp.obj
+
+llQueue.i: llQueue.cpp.i
+
+.PHONY : llQueue.i
+
+# target to preprocess a source file
+llQueue.cpp.i:
+	$(MAKE) -f CMakeFiles\Stacks_Queues.dir\build.make CMakeFiles/Stacks_Queues.dir/llQueue.cpp.i
+.PHONY : llQueue.cpp.i
+
+llQueue.s: llQueue.cpp.s
+
+.PHONY : llQueue.s
+
+# target to generate assembly for a file
+llQueue.cpp.s:
+	$(MAKE) -f CMakeFiles\Stacks_Queues.dir\build.make CMakeFiles/Stacks_Queues.dir/llQueue.cpp.s
+.PHONY : llQueue.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -158,6 +185,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Stacks_Queues
 	@echo ... edit_cache
+	@echo ... llQueue.obj
+	@echo ... llQueue.i
+	@echo ... llQueue.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
