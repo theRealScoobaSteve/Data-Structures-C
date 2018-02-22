@@ -14,15 +14,20 @@ int main() {
 
     fout.open( "C:\\Users\\steph\\Desktop\\Data-Structures-C\\Stacks-Queues\\output.txt" );
 
-    arStack list1;
-    llStack list2;
-
-    fillAll( list1 );
-    fillAll( list2 );
-    fout << "Below is the output for the arStack!\n\n";
-    emptyAll( fout, list1 );
-    fout << "\nBelow is the output for the llStack!\n\n";
-    emptyAll( fout, list2 );
+//    arStack list1;
+//    llStack list2;
+//    arQueue list3;
+    llQueue list4;
+//
+//    fillAll( list1 );
+//    fillAll( list2 );
+    fillAll( list4 );
+//    fout << "Below is the output for the arStack!\n\n";
+//    emptyAll( fout, list1 );
+//    fout << "\nBelow is the output for the llStack!\n\n";
+//    emptyAll( fout, list2 );
+fout << "\nBelow is the output for the llQueue!\n\n";
+    emptyAll( fout, list4 );
 
     fout.close();
 
@@ -45,8 +50,30 @@ void fillAll( stack &list ) {
     inFile.close();
 }
 
+void fillAll( queue &list ) {
+    ifstream inFile;
+    string word;
+
+    inFile.open( "C:\\Users\\steph\\Desktop\\Data-Structures-C\\Stacks-Queues\\words.txt" );
+
+    if( !inFile )
+        cout << "Error opening file.\n";
+
+    while( getline( inFile, word ) ) {
+        list.enq( word );
+    }
+
+    inFile.close();
+}
+
 void emptyAll( ostream &fout, stack &list ) {
     while( !list.isEmpty() ) {
         fout << list.pop() << endl;
+    }
+}
+
+void emptyAll( ostream &fout, queue &list ) {
+    while( !list.isEmpty() ) {
+        fout << list.deq() << endl;
     }
 }

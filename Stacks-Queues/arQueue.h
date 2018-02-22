@@ -17,8 +17,10 @@ public:
         data[tail] = val;
     }
 
-    void deq() {                                             // N
+    string deq() {                                             // N
+        int word = head;
         head++;
+        return data[word];
     }
 
     string front() {                                     // N
@@ -26,7 +28,7 @@ public:
     }
 
     bool isEmpty() {                                     // N
-        return data[head] == "";
+        return data[head].empty();
     }
 
     bool isFull() {                                      // N

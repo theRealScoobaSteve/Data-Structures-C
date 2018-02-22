@@ -16,8 +16,10 @@ public:
         temp->data = val;
 
        if( isEmpty() ) {
+           temp->next = nullptr;
            head = temp;
            tail = temp;
+
        }
        else {
            temp->next = NULL;
@@ -29,7 +31,7 @@ public:
     string deq() {                            // Constant
         node *temp;
         temp = head;
-        head = temp->next;
+        head = head->next;
         string word = temp->data;
         delete temp;
         return word;
@@ -47,6 +49,7 @@ public:
         while( head != NULL ) {
             deq();
         }
+        tail = nullptr;
     }
 
 private:
