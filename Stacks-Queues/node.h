@@ -8,8 +8,7 @@
 #include <iostream>
 using namespace std;
 
-class node {
-public:
+struct node {
     string data;
     node *next;
 };

@@ -9,20 +9,21 @@
 
 class llStack: public stack {
 public:
-    llStack() { head = NULL; }     // Constant
+    llStack() { head = nullptr; }     // Constant
 
     void push( string val ) {         // Constant
-        node *temp;
+        node *temp = new node;
         temp->data = val;
         temp->next = head;
         head = temp;
     };
 
-    void pop() {                    // Constant
+    string pop() {                    // Constant
         node *temp = head;
         head = head->next;
-        cout << temp->data;
+        string word = temp->data;
         delete temp;
+        return word;
     }
 
     string top() {                  // Constant
@@ -35,7 +36,7 @@ public:
 
     ~llStack() {                    // N
         while( head != NULL ) {
-            pop();
+            string word = pop();
         }
     }
 

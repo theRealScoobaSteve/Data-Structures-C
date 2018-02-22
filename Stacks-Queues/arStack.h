@@ -8,17 +8,28 @@
 
 class arStack: public stack {
 public:
-    arStack() { front=0; data[30000]; }           // N
+    arStack() { front=0; data=new string[60000]; }           // N
 
     void push( string val ) {                   // N
-        if( !isEmpty() ) {
-            front++;
+        if( !isFull() ) {
+            if( !isEmpty() ) {
+                front++;
+            }
+            data[front] = val;
         }
-        data[front] = val;
     }
 
-    void pop() {                                // N
-        front--;
+    string pop() {                                // N
+        if( front > 0 ) {
+            int word = front;
+            front--;
+            return data[word];
+        }
+        else {
+            string word = data[front];
+            data[front] = "";
+            return word;
+        }
     }
 
     string top() {                              // N
@@ -26,17 +37,17 @@ public:
     }
 
     bool isEmpty() {                            // N
-        return data[front] ==  "";
+        return data[front].empty();
     }
 
     bool isFull() {                             // N
-        return front == 99;
+        return front == 60000;
     }
 
-    ~arStack() { front = 0; data[front] = ""; } // N
+    ~arStack() { front = 0; delete data; } // N
 private:
     int front;
-    string data[];
+    string *data;
 };
 
 #endif //STACKS_QUEUES_ARSTACK_H

@@ -8,7 +8,7 @@
 
 class arQueue: public queue {
 public:
-    arQueue() { tail=0; head=0; data[30000]; }             // N
+    arQueue() { tail=0; head=0; data[60000]; }             // N
 
     void enq( string val ) {                             // N
         if( !isEmpty() ) {
@@ -30,10 +30,10 @@ public:
     }
 
     bool isFull() {                                      // N
-        return head == 99;
+        return head == 60000;
     }
 
-    ~arStack() { head = 0; tail=0; data[head] = ""; }    // N
+    ~arQueue() { head = 0; tail=0; data[head] = ""; }    // N
 private:
     int tail;
     int head;

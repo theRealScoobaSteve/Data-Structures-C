@@ -12,7 +12,7 @@ public:
     llQueue(){ head = NULL; tail = NULL; }  // Constant
 
     void enq( string val ) {                  // Constant
-        node *temp;
+        node *temp = new node;
         temp->data = val;
 
        if( isEmpty() ) {
@@ -26,12 +26,13 @@ public:
        }
     };
 
-    void deq() {                            // Constant
+    string deq() {                            // Constant
         node *temp;
         temp = head;
         head = temp->next;
+        string word = temp->data;
         delete temp;
-        temp = NULL;
+        return word;
     }
 
     string front() {                        // Constant

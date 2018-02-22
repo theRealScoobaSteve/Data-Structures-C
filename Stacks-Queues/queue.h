@@ -9,8 +9,10 @@
 using namespace std;
 
 class queue {
+public:
+    queue() { };
     virtual void enq( string val ) { }
-    virtual void deq() { }
+    virtual string deq() { }
     virtual string front() { }
     virtual bool isEmpty() { }
     virtual bool isFull() { }
