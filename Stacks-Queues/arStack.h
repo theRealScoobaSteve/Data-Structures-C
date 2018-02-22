@@ -4,13 +4,11 @@
 
 #ifndef STACKS_QUEUES_ARSTACK_H
 #define STACKS_QUEUES_ARSTACK_H
-#include <string>
-#include <iostream>
-using namespace std;
+#include "stack.h"
 
-class arStack {
+class arStack: public stack {
 public:
-    arStack() { front=0; data[100]; };          // N
+    arStack() { front=0; data[30000]; }           // N
 
     void push( string val ) {                   // N
         if( !isEmpty() ) {

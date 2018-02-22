@@ -1,5 +1,9 @@
-#include <iostream>
-using namespace std;
+#include "arQueue.h"
+#include "arStack.h"
+#include "llQueue.h"
+#include "llStack.h"
+
+
 
 int main() {
 

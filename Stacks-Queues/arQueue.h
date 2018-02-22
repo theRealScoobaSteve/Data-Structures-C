@@ -4,13 +4,11 @@
 
 #ifndef STACKS_QUEUES_ARQUEUE_H
 #define STACKS_QUEUES_ARQUEUE_H
-#include <string>
-#include <iostream>
-using namespace std;
+#include "queue.h"
 
-class arQueue {
+class arQueue: public queue {
 public:
-    arQueue() { tail=0; head=0; data[100]; };            // N
+    arQueue() { tail=0; head=0; data[30000]; }             // N
 
     void enq( string val ) {                             // N
         if( !isEmpty() ) {
@@ -19,7 +17,7 @@ public:
         data[tail] = val;
     }
 
-void deq() {                                             // N
+    void deq() {                                             // N
         head++;
     }
 
@@ -35,7 +33,7 @@ void deq() {                                             // N
         return head == 99;
     }
 
-    ~arStack() { head = 0; tail=0; data[head] = ""; }   // N
+    ~arStack() { head = 0; tail=0; data[head] = ""; }    // N
 private:
     int tail;
     int head;

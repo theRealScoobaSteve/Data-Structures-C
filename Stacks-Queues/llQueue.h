@@ -5,10 +5,11 @@
 #ifndef STACKS_QUEUES_LLQUEUE_H
 #define STACKS_QUEUES_LLQUEUE_H
 #include "node.h"
+#include "queue.h"
 
-class llQueue {
+class llQueue: public queue {
 public:
-    llQueue(){ head = NULL; tail = NULL; }; // Constant
+    llQueue(){ head = NULL; tail = NULL; }  // Constant
 
     void enq( string val ) {                  // Constant
         node *temp;

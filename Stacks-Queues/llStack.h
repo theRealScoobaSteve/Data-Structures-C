@@ -4,11 +4,12 @@
 
 #ifndef STACKS_QUEUES_LLSTACK_H
 #define STACKS_QUEUES_LLSTACK_H
+#include "stack.h"
 #include "node.h"
 
-class llStack {
+class llStack: public stack {
 public:
-    llStack() { head = NULL; };     // Constant
+    llStack() { head = NULL; }     // Constant
 
     void push( string val ) {         // Constant
         node *temp;
