@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/steph/Desktop/Data Structures/String-Library-C/String-Library/./my_string.h
+iostream
+-
+stdlib.h
+-
+
+C:/Users/steph/Desktop/Data Structures/String-Library-C/String-Library/main.cpp
+my_string.h
+C:/Users/steph/Desktop/Data Structures/String-Library-C/String-Library/my_string.h
+fstream
+-
+
+C:/Users/steph/Desktop/Data Structures/String-Library-C/String-Library/my_string.cpp
+./my_string.h
+C:/Users/steph/Desktop/Data Structures/String-Library-C/String-Library/./my_string.h
+
+C:/Users/steph/Desktop/Data Structures/String-Library-C/String-Library/my_string.h
+iostream
+-
+stdlib.h
+-
+

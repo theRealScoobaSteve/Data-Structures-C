@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/steph/Desktop/Data Structures/List-Library-C/Linked-List-Library-C/././node.h
+
+C:/Users/steph/Desktop/Data Structures/List-Library-C/Linked-List-Library-C/./my_string.h
+iostream
+-
+stdlib.h
+-
+./node.h
+C:/Users/steph/Desktop/Data Structures/List-Library-C/Linked-List-Library-C/././node.h
+
+C:/Users/steph/Desktop/Data Structures/List-Library-C/Linked-List-Library-C/./node.h
+
+C:/Users/steph/Desktop/Data Structures/List-Library-C/Linked-List-Library-C/helper-functions.cpp
+./my_string.h
+C:/Users/steph/Desktop/Data Structures/List-Library-C/Linked-List-Library-C/./my_string.h
+./node.h
+C:/Users/steph/Desktop/Data Structures/List-Library-C/Linked-List-Library-C/./node.h
+
+C:/Users/steph/Desktop/Data Structures/List-Library-C/Linked-List-Library-C/main.cpp
+./my_string.h
+C:/Users/steph/Desktop/Data Structures/List-Library-C/Linked-List-Library-C/./my_string.h
+fstream
+-
+
+C:/Users/steph/Desktop/Data Structures/List-Library-C/Linked-List-Library-C/my_string.cpp
+./my_string.h
+C:/Users/steph/Desktop/Data Structures/List-Library-C/Linked-List-Library-C/./my_string.h
+
