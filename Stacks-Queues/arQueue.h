@@ -8,13 +8,19 @@
 
 class arQueue: public queue {
 public:
-    arQueue() { tail=0; head=0; data[60000]; }             // N
+    arQueue() { tail=0; head=0; data=new string[60000]; }             // N
 
     void enq( string val ) {                             // N
-        if( !isEmpty() ) {
-            tail++;
+        if( !isFull() ) {
+            if (!isEmpty()) {
+                tail++;
+                data[tail] = val;
+            }
+            else {
+                data[head] = val;
+            }
+
         }
-        data[tail] = val;
     }
 
     string deq() {                                             // N
@@ -35,11 +41,11 @@ public:
         return head == 60000;
     }
 
-    ~arQueue() { head = 0; tail=0; data[head] = ""; }    // N
+    ~arQueue() { head = 0; tail=0; delete data; }    // N
 private:
     int tail;
     int head;
-    string data[];
+    string *data;
 };
 
 #endif //STACKS_QUEUES_ARQUEUE_H

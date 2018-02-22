@@ -14,19 +14,22 @@ int main() {
 
     fout.open( "C:\\Users\\steph\\Desktop\\Data-Structures-C\\Stacks-Queues\\output.txt" );
 
-//    arStack list1;
-//    llStack list2;
-//    arQueue list3;
+    arStack list1;
+    llStack list2;
+    arQueue list3;
     llQueue list4;
-//
-//    fillAll( list1 );
-//    fillAll( list2 );
+
+    fillAll( list1 );
+    fillAll( list2 );
+    fillAll( list3 );
     fillAll( list4 );
-//    fout << "Below is the output for the arStack!\n\n";
-//    emptyAll( fout, list1 );
-//    fout << "\nBelow is the output for the llStack!\n\n";
-//    emptyAll( fout, list2 );
-fout << "\nBelow is the output for the llQueue!\n\n";
+    fout << "Below is the output for the arStack!\n\n";
+    emptyAll( fout, list1 );
+    fout << "\nBelow is the output for the llStack!\n\n";
+    emptyAll( fout, list2 );
+    fout << "\nBelow is the output for the arQueue!\n\n";
+    emptyAll( fout, list3 );
+    fout << "\nBelow is the output for the llQueue!\n\n";
     emptyAll( fout, list4 );
 
     fout.close();
