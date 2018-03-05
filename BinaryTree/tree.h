@@ -8,21 +8,30 @@
 template <class element>
 class tree {
 public:
+    // Constructor
     tree(){ root= nullptr; }
-    void insert( int value ) {
+
+    // Inserts nodes into the tree
+    void insert( element value ) {
+        // If empty this value is the root
         if ( root == nullptr ) {
             root = new treeNode<element>( value );
         }
+        // Else traverse tree and find correct spot
         else {
             root->insert( value );
         }
     }
 
-    element find( element data ) {
+    // Searches for a value in the tree
+    bool find( element data ) {
         treeNode<element> *val = root->find( data );
-        return val->getData();
+        if( val == nullptr )
+            return false;
+        return true;
     }
 
+    // Removes values from the tree
     void remove( element data ) {
         root = root->remove( root, data );
     }

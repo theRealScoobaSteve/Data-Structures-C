@@ -14,7 +14,7 @@ int main() {
 
     binaryTree.traverseInOrder();
 
-    binaryTree.remove( 91 );
+    binaryTree.find( 92 );
     cout << endl << "91 was removed" << endl << endl;
 
     binaryTree.traverseInOrder();
