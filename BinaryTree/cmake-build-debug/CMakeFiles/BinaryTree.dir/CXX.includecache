@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/steph/Desktop/Data-Structures-C/Data Structures/BinaryTree/main.cpp
+C:/Users/steph/Desktop/Data-Structures-C/BinaryTree/main.cpp
 tree.h
-C:/Users/steph/Desktop/Data-Structures-C/Data Structures/BinaryTree/tree.h
+C:/Users/steph/Desktop/Data-Structures-C/BinaryTree/tree.h
 
-C:/Users/steph/Desktop/Data-Structures-C/Data Structures/BinaryTree/tree.h
+C:/Users/steph/Desktop/Data-Structures-C/BinaryTree/tree.h
 treeNode.h
-C:/Users/steph/Desktop/Data-Structures-C/Data Structures/BinaryTree/treeNode.h
+C:/Users/steph/Desktop/Data-Structures-C/BinaryTree/treeNode.h
 
-C:/Users/steph/Desktop/Data-Structures-C/Data Structures/BinaryTree/treeNode.h
+C:/Users/steph/Desktop/Data-Structures-C/BinaryTree/treeNode.h
 string
 -
 iostream

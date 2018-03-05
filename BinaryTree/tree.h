@@ -18,8 +18,25 @@ public:
         }
     }
 
-    treeNode<element> *find( element data ) {
-        return root->find( data );
+    element find( element data ) {
+        treeNode<element> *val = root->find( data );
+        return val->getData();
+    }
+
+    void remove( element data ) {
+        root = root->remove( root, data );
+    }
+
+    void traverseInOrder() {
+        root->inOrder();
+    }
+
+    void traversePreOrder() {
+        root->preOrder();
+    }
+
+    void traversePostOrder() {
+        root->postOrder();
     }
 
 private:
