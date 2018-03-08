@@ -53,13 +53,10 @@ tree<string> *create() {
         binaryTree->insert( temp );
     }
 
-    binaryTree->traverseInOrder();
-
     fin.close();
 
     return binaryTree;
 }
 void deleteTree( tree<string> *tree ) {
     tree->deleteTree();
-    tree->traverseInOrder();
 }

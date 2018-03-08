@@ -67,7 +67,7 @@ public:
             cout << endl << "Empty tree" << endl << endl;
     }
 
-    ~tree() { delete root; }
+    ~tree() { deleteTree(); delete root; }
 
 private:
     treeNode<element> *root;

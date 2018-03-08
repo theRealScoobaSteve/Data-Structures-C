@@ -72,8 +72,8 @@ public:
 
     treeNode<element> *remove( treeNode<element> *node, element value ) {
         // Tree is empty
-        if( !this ) {
-            throw emptyTree();
+        if( this == nullptr ) {
+            return this;
         }
 
         // If the value is to the left traverse left and replace the left child with a lower value
@@ -180,9 +180,6 @@ public:
                 leftChild = nullptr;
             if( !rightChild )
                 rightChild = nullptr;
-        }
-        else {
-            throw emptyTree();
         }
 
     }
