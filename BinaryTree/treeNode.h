@@ -52,11 +52,14 @@ public:
                 }
             }
         }
+        else {
+            throw sameVal();
+        }
     }
 
     treeNode<element> *find( element data ) {
         // If empty or data is root return
-        if ( this == nullptr || this->data == data )
+        if ( !this || this->data == data )
             return this;
 
         // Traverse left if current child less than the search
@@ -69,8 +72,8 @@ public:
 
     treeNode<element> *remove( treeNode<element> *node, element value ) {
         // Tree is empty
-        if( this == nullptr ) {
-            return this;
+        if( !this ) {
+            throw emptyTree();
         }
 
         // If the value is to the left traverse left and replace the left child with a lower value
@@ -102,7 +105,9 @@ public:
     }
 
     // Finds the minimum value in the tree
-    int min() {
+    element min() {
+        if( !this )
+            throw emptyTree();
         // Min found
         if ( leftChild == nullptr ) {
             return data;
@@ -114,7 +119,9 @@ public:
     }
 
     // Finds the max value of the tree
-    int max() {
+    element max() {
+        if( !this )
+            throw emptyTree();
         // Max found
         if ( rightChild == nullptr ) {
             return data;
@@ -126,6 +133,9 @@ public:
     }
 
     void inOrder() {
+        if( !this )
+            throw emptyTree();
+
         if ( leftChild ) {
             leftChild->inOrder();
         }
@@ -136,6 +146,9 @@ public:
     }
 
     void preOrder() {
+        if( !this )
+            throw emptyTree();
+
         cout << data << endl;
         if ( leftChild ) {
             leftChild->preOrder();
@@ -146,6 +159,9 @@ public:
     }
 
     void postOrder() {
+        if( !this )
+            throw emptyTree();
+
         if ( leftChild ) {
             leftChild->postOrder();
         }
@@ -156,8 +172,7 @@ public:
     }
 
     void deleteTree( treeNode<element> *node ) {
-        if( !this )
-        {
+        if( !this ) {
             deleteTree( leftChild );
             deleteTree( rightChild );
             delete( this );
@@ -166,6 +181,10 @@ public:
             if( !rightChild )
                 rightChild = nullptr;
         }
+        else {
+            throw emptyTree();
+        }
+
     }
 
     ~treeNode(){ delete rightChild; delete leftChild; }

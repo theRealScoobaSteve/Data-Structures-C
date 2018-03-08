@@ -1,12 +1,48 @@
 #include "tree.h"
 #include <fstream>
 
-bool testFind( tree<string> * );
-bool testRemove( tree<string> * );
+void testFind( tree<string> * );
+void testRemove( tree<string> * );
 tree<string> *create();
-bool deleteTree( tree<string> * );
+void deleteTree( tree<string> * );
 
 int main() {
+    ofstream fout;
+    fout.open( "C:\\Users\\steph\\Desktop\\Data-Structures-C\\BinaryTree\\output.txt" );
+    try {
+        tree<string> *tree = create();
+        testFind( tree );
+        testRemove( tree );
+        deleteTree( tree );
+        fout << "All tests passed";
+    }
+    catch( sameVal ) {
+        fout << "Can't pass 2 of the same values to this tree";
+    }
+    catch( emptyTree ) {
+        fout << "This tree is empty";
+    }
+    catch( ... ) {
+        fout << "Major Issues";
+    }
+
+    fout.close();
+
+    return 0;
+}
+
+void testFind( tree<string> *tree ) {
+    tree->find( "zonally");
+    tree->find( "yell");
+    tree->find( "image");
+}
+
+void testRemove( tree<string> *tree ) {
+    tree->remove( "zonally" );
+    tree->remove( "yell" );
+    tree->remove( "image" );
+}
+tree<string> *create() {
     tree<string> *binaryTree = new tree<string>;
     string temp;
     ifstream fin;
@@ -19,23 +55,11 @@ int main() {
 
     binaryTree->traverseInOrder();
 
-
-
     fin.close();
 
-    return 0;
+    return binaryTree;
 }
-
-bool testFind( tree<string> *tree ) {
-    if( tree->find( "zonally") )
-        return true;
-
-    return false;
+void deleteTree( tree<string> *tree ) {
+    tree->deleteTree();
+    tree->traverseInOrder();
 }
-
-bool testRemove( tree<string> *tree ) {
-    tree->remove( "zonally" );
-    return true;
-}
-//tree<string> *create();
-//bool deleteTree();
