@@ -1,24 +1,41 @@
 #include "tree.h"
+#include <fstream>
+
+bool testFind( tree<string> * );
+bool testRemove( tree<string> * );
+tree<string> *create();
+bool deleteTree( tree<string> * );
 
 int main() {
-    tree<int> binaryTree;
+    tree<string> *binaryTree = new tree<string>;
+    string temp;
+    ifstream fin;
+    fin.open( "C:\\Users\\steph\\Desktop\\Data-Structures-C\\BinaryTree\\random.txt" );
 
-    binaryTree.insert( 81 );
-    binaryTree.insert( 91 );
-    binaryTree.insert( 41 );
-    binaryTree.insert( 51 );
-    binaryTree.insert( 71 );
-    binaryTree.insert( 1 );
-    binaryTree.insert( 500 );
-    binaryTree.insert( 434 );
+    while( fin ) {
+        getline( fin, temp );
+        binaryTree->insert( temp );
+    }
 
-    binaryTree.traverseInOrder();
+    binaryTree->traverseInOrder();
 
-    binaryTree.find( 92 );
-    cout << endl << "91 was removed" << endl << endl;
 
-    binaryTree.traverseInOrder();
 
+    fin.close();
 
     return 0;
 }
+
+bool testFind( tree<string> *tree ) {
+    if( tree->find( "zonally") )
+        return true;
+
+    return false;
+}
+
+bool testRemove( tree<string> *tree ) {
+    tree->remove( "zonally" );
+    return true;
+}
+//tree<string> *create();
+//bool deleteTree();

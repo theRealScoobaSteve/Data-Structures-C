@@ -37,16 +37,37 @@ public:
     }
 
     void traverseInOrder() {
-        root->inOrder();
+        if( root )
+            root->inOrder();
+        else
+            cout << endl << "Empty tree" << endl << endl;
     }
 
     void traversePreOrder() {
-        root->preOrder();
+        if( root )
+            root->preOrder();
+        else
+            cout << endl << "Empty tree" << endl << endl;
     }
 
     void traversePostOrder() {
-        root->postOrder();
+        if ( root )
+            root->postOrder();
+        else
+            cout << endl << "Empty tree" << endl << endl;
     }
+
+    void deleteTree() {
+        if ( root ) {
+            root->deleteTree( root );
+            delete root;
+            root = nullptr;
+        }
+        else
+            cout << endl << "Empty tree" << endl << endl;
+    }
+
+    ~tree() { delete root; }
 
 private:
     treeNode<element> *root;

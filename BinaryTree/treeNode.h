@@ -9,6 +9,9 @@
 #include <iostream>
 using namespace std;
 
+class emptyTree {};
+class sameVal {};
+
 template <class element>
 class treeNode {
 public:
@@ -23,7 +26,7 @@ public:
         treeNode::data = data;
     }
 
-    void insert( int value ) {
+    void insert( element value ) {
         // Check for duplicate
         if ( value != data ) {
             // Determine which side of tree to insert
@@ -123,36 +126,49 @@ public:
     }
 
     void inOrder() {
-        if (leftChild != nullptr) {
+        if ( leftChild ) {
             leftChild->inOrder();
         }
         cout << data << endl;
-        if (rightChild != nullptr) {
+        if ( rightChild ) {
             rightChild->inOrder();
         }
     }
 
     void preOrder() {
         cout << data << endl;
-        if (leftChild != nullptr) {
-            leftChild->inOrder();
+        if ( leftChild ) {
+            leftChild->preOrder();
         }
-        if (rightChild != nullptr) {
-            rightChild->inOrder();
+        if ( rightChild ) {
+            rightChild->preOrder();
         }
     }
 
     void postOrder() {
-        if (leftChild != nullptr) {
-            leftChild->inOrder();
+        if ( leftChild ) {
+            leftChild->postOrder();
         }
-        if (rightChild != nullptr) {
-            rightChild->inOrder();
+        if ( rightChild ) {
+            rightChild->postOrder();
         }
         cout << data << endl;
     }
 
-    ~treeNode(){ delete data; delete rightChild; delete leftChild; }
+    void deleteTree( treeNode<element> *node ) {
+        if( !this )
+        {
+            deleteTree( leftChild );
+            deleteTree( rightChild );
+            delete( this );
+            if( !leftChild )
+                leftChild = nullptr;
+            if( !rightChild )
+                rightChild = nullptr;
+        }
+    }
+
+    ~treeNode(){ delete rightChild; delete leftChild; }
 private:
     element  data;
     treeNode<element> *rightChild;
