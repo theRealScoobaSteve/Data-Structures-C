@@ -3,4 +3,4 @@ project(SecondLargest)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(SecondLargest main.cpp)
+add_executable(SecondLargest main.cpp stack.h)

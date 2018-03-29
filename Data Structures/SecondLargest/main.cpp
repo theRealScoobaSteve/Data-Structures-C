@@ -1,26 +1,18 @@
 #include <iostream>
+#include "stack.h"
 using namespace std;
 
-int secondLargest( int a[], int size ) {
-    int currentMax = a[0];
-    int secondMax=0;
-    for( int i = 0; i< size; i++ ) {
-        if ( a[i] >secondMax )
-            secondMax = a[i];
-
-        if ( a[i]>currentMax ){
-            secondMax=currentMax;
-            currentMax=a[i];
-        }
-
-        return secondMax;
-    }
-}
 int main () {
+    stack myStack;
 
-
-    int a[10]={ 9,8,3,1,6,5,7,2,10,4 };
-    cout << "The max of the array is :" << secondLargest( a,10 ) << endl;
+    myStack.push(5);
+    myStack.push(18);
+    myStack.push(12);
+    myStack.push(99);
+    myStack.push(88);
+    myStack.pop();
+    myStack.pop();
+    cout << "The second largest is " << myStack.secondLargest() << endl;
 
     return 0;
 }
