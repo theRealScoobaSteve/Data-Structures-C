@@ -1,0 +1,3 @@
+C:/Users/steph/Desktop/Data-Structures-C/Sorting/cmake-build-debug/CMakeFiles/Sorting.dir
+C:/Users/steph/Desktop/Data-Structures-C/Sorting/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/steph/Desktop/Data-Structures-C/Sorting/cmake-build-debug/CMakeFiles/rebuild_cache.dir
