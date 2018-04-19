@@ -7,18 +7,21 @@
 
 #include "sort.h"
 
-template <class type>
-class heapSort: public sort {
+#include "Sort.h"
+
+class HeapSort: public Sort
+{
 public:
-    heapSort( int l ){
-        size = l;
-        arr[size];
+    HeapSort( int size ):Sort(size) {
+
     }
 
-    // To heapify a subtree rooted with node i which is
-    // an index in arr[]. n is size of heap
-    void heapify( type temp[], int n, int i )
-    {
+    ~HeapSort() {
+
+        delete myAr;
+    }
+
+    void heapify( string temp[], int n, int i ) {
         int largest = i;  // Initialize largest as root
         int l = 2*i + 1;  // left = 2*i + 1
         int r = 2*i + 2;  // right = 2*i + 2
@@ -31,37 +34,60 @@ public:
         if ( r < n && temp[r] > temp[largest] )
             largest = r;
 
+
         // If largest is not root
-        if ( largest != i )
-        {
+        if ( largest != i ) {
+
             swap( temp[i], temp[largest] );
 
             // Recursively heapify the affected sub-tree
-            heapify( arr, n, largest );
+            heapify( myAr, n, largest );
         }
+
+
     }
 
-    void sortArr( int n ) {
-        // Build heap (rearrange array)
+    void sort() {
         for (int i = n / 2 - 1; i >= 0; i--)
-            heapify(arr, n, i);
+            heapify( myAr, n, i );
 
         // One by one extract an element from heap
-        for (int i=n-1; i>=0; i--)
+        for ( int i=n-1; i>=0; i-- )
         {
             // Move current root to end
-            swap(arr[0], arr[i]);
+            swap( myAr[0], myAr[i] );
 
             // call max heapify on the reduced heap
-            heapify(arr, i, 0);
+            heapify( myAr, i, 0 );
         }
     }
 
-    ~heapSort(){ delete arr; }
+    void print( ostream &out ) {
+        for (int i=0; i<n; ++i)
+            out << myAr[i] << " ";
+        out << "\n";
+    }
+
+    void insertAllFromFile( const char *filename, int numItemsToLoad ) {
+        int i = 0;
+        string value;
+        ifstream fin;
+        fin.open( filename );
+
+        if(!fin) {
+            cout << "Didn't open file\n";
+        }
+
+
+        while( fin >> value && i < numItemsToLoad ) {
+            myAr[i] = value;
+            i++;
+        }
+
+    }
+
 
 private:
-    type arr[];
-    int size;
-};
 
+};
 #endif //SORTING_HEAPSORT_H

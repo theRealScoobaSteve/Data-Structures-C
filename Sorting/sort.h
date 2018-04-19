@@ -9,24 +9,21 @@
 #include <fstream>
 using namespace std;
 
-template <class type>
-class sort {
+
+class Sort
+{
 public:
-    sort(){}
 
-    void readFromFile( char *file, int amount ) {}
+    Sort(int size);
+    ~Sort();
 
-    void print( ostream &out ) {}
+    virtual void insertAllFromFile( const char *filename, int numItemsToLoad ) = 0;
+    virtual void print( ostream &out ) = 0;
+    virtual void sort() = 0;
 
-    virtual void sortArr() {}
-
-    virtual void swap( type *xp, type *yp ) {
-        type temp = *xp;
-        *xp = *yp;
-        *yp = temp;
-    }
-
-    virtual ~sort() {}
+protected:
+    string *myAr;
+    int n;
 };
 
 

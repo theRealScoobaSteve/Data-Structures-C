@@ -5,52 +5,89 @@
 #ifndef SORTING_QUICKSORT_H
 #define SORTING_QUICKSORT_H
 
-#include "sort.h"
+#include "Sort.h"
 
-template <class type>
-class quickSort: public sort {
-    quickSort( int l ){
-        size = l;
-        arr[size];
+
+class QuickSort: public Sort
+{
+public:
+    QuickSort( int size ):Sort(size) {}
+
+    ~QuickSort() {
+        delete myAr;
     }
 
-    int partition ( type temp[], int low, int high ) {
-        int pivot = temp[high];    // pivot
-        int i = (low - 1);  // Index of smaller element
+    void insertAllFromFile( const char *filename, int numItemsToLoad ) {
+        int i = 0;
+        string value;
+        ifstream fin;
+        fin.open( filename );
 
-        for (int j = low; j <= high- 1; j++)
+        if( !fin )
         {
-            // If current element is smaller than or
-            // equal to pivot
-            if (temp[j] <= pivot)
-            {
-                i++;    // increment index of smaller element
-                swap(&temp[i], &temp[j]);
+            cout << "Didn't open file\n";
+        }
+
+
+        while( fin >> value && i < numItemsToLoad )
+        {
+            myAr[i] = value;
+            i++;
+        }
+
+    }
+
+    void print( ostream &out ) {
+        for (int i=0; i<n; ++i)
+            out << myAr[i] << endl;
+    }
+
+    void sort() {
+        recQuickSort( 0,n-1 );
+    }
+
+    int partition( int first, int last ) {
+        string pivot;
+
+        int index;
+        int smallIndex;
+
+        swap( first,(first+last)/2 );
+        pivot = myAr[first];
+        smallIndex = first;
+
+        for(index = first + 1;index <= last;index++) {
+            if(myAr[index] < pivot) {
+                smallIndex++;
+                swap( smallIndex,index );
             }
         }
-        swap(&temp[i + 1], &temp[high]);
-        return (i + 1);
+
+        swap(first,smallIndex);
+        return smallIndex;
     }
 
-    void sortArr( int low, int high ) {
-        if (low < high)
-        {
-            /* pi is partitioning index, arr[p] is now
-               at right place */
-            int pi = partition(arr, low, high);
+    void swap( int first, int second ) {
+        string temp;
+        temp = myAr[first];
+        myAr[first] = myAr[second];
+        myAr[second] = temp;
+    }
 
-            // Separately sort elements before
-            // partition and after partition
-            sortArr( low, pi - 1 );
-            sortArr( pi + 1, high );
+    void recQuickSort( int first, int last ) {
+
+        int pivotLocation;
+        if(first < last) {
+            pivotLocation = partition( first,last );
+            recQuickSort( first,pivotLocation-1 );
+            recQuickSort( pivotLocation+1,last );
+
         }
+
     }
 
-    ~quickSort() { delete arr; }
 
 private:
-    int size;
-    type arr[];
 };
 
 #endif //SORTING_QUICKSORT_H

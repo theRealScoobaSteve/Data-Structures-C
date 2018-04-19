@@ -7,35 +7,57 @@
 
 #include "sort.h"
 
-template <class type>
-class insertionSort: public sort {
+#include "Sort.h"
+
+
+class InsertionSort: public Sort
+{
 public:
-    insertionSort( int l ){
-        size = l;
-        arr[size];
-    }
+    InsertionSort( int size ):Sort(size) {}
 
-    void sortArr() {
-        int i, j, min_idx;
+    ~InsertionSort() {}
 
-        // One by one move boundary of unsorted subarray
-        for (i = 0; i < size-1; i++) {
-            // Find the minimum element in unsorted array
-            min_idx = i;
-            for (j = i+1; j < size; j++)
-                if (arr[j] < arr[min_idx])
-                    min_idx = j;
+    void insertAllFromFile( const char *filename, int numItemsToLoad ) {
+        int i = 0;
+        string value;
+        ifstream fin;
+        fin.open( filename );
 
-            // Swap the found minimum element with the first element
-            swap(&arr[min_idx], &arr[i]);
+        if( !fin ) {
+            cout << "Didn't open file\n";
+        }
+
+
+        while( fin >> value && i < numItemsToLoad ) {
+            myAr[i] = value;
+            i++;
         }
     }
 
-    ~insertionSort() { delete list; }
+    void print( ostream &out ) {
+        for ( int i=0; i<n; ++i )
+            out << myAr[i] << endl;
+    }
+
+    void sort() {
+        int j;
+        string key;
+        for ( int i = 1; i < n; i++ ) {
+            key = myAr[i];
+            j = i-1;
+
+//               Move elements of arr[0..i-1], that are
+//               greater than key, to one position ahead
+//               of their current position
+            while ( j >= 0 && myAr[j] > key ) {
+                myAr[j+1] = myAr[j];
+                j = j-1;
+            }
+            myAr[j+1] = key;
+        }
+    }
 
 private:
-    int size;
-    type arr[];
 };
 
 #endif //SORTING_INSERTIONSORT_H
