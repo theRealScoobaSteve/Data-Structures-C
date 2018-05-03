@@ -90,7 +90,6 @@ int main() {
 
     fout << "The Resulting Hash Table Looks Like...\n";
     result.print( fout );
-
     fout.close();
 
     return 0;
@@ -122,16 +121,14 @@ void removeAll( const char *filename, ChainedHashTable myTable ) {
     int i = 0;
     string value;
     ifstream fin;
-    fin.open(filename);
+    fin.open( filename );
 
-    if(!fin)
-    {
+    if(!fin) {
         cout << "Didn't open file\n";
     }
 
 
-    while(fin >> value  && i < myTable.getSize())
-    {
+    while( fin >> value  && i < myTable.getSize() ) {
         myTable.deleteNode(value);
         i++;
     }

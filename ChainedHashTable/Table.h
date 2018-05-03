@@ -159,7 +159,7 @@ public:
 
         list<ListNode> :: iterator i;
         int index;
-        index = myHash->hash(value,size);
+        index = myHash->hash( value,size );
 
         for ( i = table[index].begin(); i != table[index].end(); i++ ) {
             if( i->key == value)
@@ -167,11 +167,25 @@ public:
 
         }
 
-        if (i != table[index].end())
+        if ( i != table[index].end())
             return i->key;
 
     }
 
+    ListNode getNode( string value ) {
+        list<ListNode> :: iterator i;
+        int index;
+        index = myHash->hash( value,size );
+
+        for ( i = table[index].begin(); i != table[index].end(); i++ ) {
+            if( i->key == value)
+                break;
+
+        }
+
+        if ( i != table[index].end())
+            return *i;
+    }
 
     //O(N)
     void print( ostream &out ) {
@@ -183,6 +197,14 @@ public:
 
             out << endl;
         }
+    }
+
+    int &operator[] ( string value ) {
+        ListNode data = this->getNode( value );
+        if( data.key == value )
+            data.count++;
+
+        return data.count;
     }
 
     void calcChainLength() {
