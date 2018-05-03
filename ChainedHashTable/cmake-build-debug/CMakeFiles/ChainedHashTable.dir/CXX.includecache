@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/steph/Desktop/Data-Structures-C/ChainedHashTable/Table.h
+iostream
+-
+string
+-
+cstdlib
+-
+list
+-
+
+C:/Users/steph/Desktop/Data-Structures-C/ChainedHashTable/main.cpp
+iostream
+-
+fstream
+C:/Users/steph/Desktop/Data-Structures-C/ChainedHashTable/fstream
+Table.h
+C:/Users/steph/Desktop/Data-Structures-C/ChainedHashTable/Table.h
+chrono
+-
+
