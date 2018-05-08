@@ -199,11 +199,8 @@ public:
         }
     }
 
-    int &operator[] ( string value ) {
+    int operator[] ( string value ) {
         ListNode data = this->getNode( value );
-        if( data.key == value )
-            data.count++;
-
         return data.count;
     }
 
