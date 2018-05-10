@@ -13,7 +13,7 @@ using namespace std;
 
 class AnyList {
 public:
-    AnyList() { head = nullptr; }
+    AnyList() {  }
 
     ~AnyList() { head.clear(); }
 

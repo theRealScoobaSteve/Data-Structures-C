@@ -15,8 +15,8 @@ class AdjMatrixGraph {
 public:
     AdjMatrixGraph() {
         capacity = 5;
-        vertex = new vector<string>( 6, "" );
-        matrix = new vector<vector<int>>( 6, vector<int>( 6, 0 ) );
+        vertex = new vector<string>( 7, "" );
+        matrix = new vector<vector<int>>( 7, vector<int>( 7, 0 ) );
         vertCount = 0;
     }
 
@@ -29,8 +29,8 @@ public:
 
     AdjMatrixGraph( vector<vector<string>> graphData ) {
         capacity = 5;
-        vertex = new vector<string>( 5, "" );
-        matrix = new vector<vector<int>>( 6, vector<int>( 6, 0 ) );
+        vertex = new vector<string>( 7, "" );
+        matrix = new vector<vector<int>>( 7, vector<int>( 7, 0 ) );
         vertCount = 0;
     }
 
