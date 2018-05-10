@@ -15,22 +15,22 @@ class AdjMatrixGraph {
 public:
     AdjMatrixGraph() {
         capacity = 5;
-        vertex = new vector<string>( 5 );
-        matrix = new vector<vector<int>>( 5 );
+        vertex = new vector<string>( 6, "" );
+        matrix = new vector<vector<int>>( 6, vector<int>( 6, 0 ) );
         vertCount = 0;
     }
 
     AdjMatrixGraph( int capacity ) {
         this->capacity = capacity;
         vertex = new vector<string>( capacity );
-        matrix = new vector<vector<int>>( capacity );
+        matrix = new vector<vector<int>>( capacity, vector<int>( capacity, 0 ) );
         vertCount = 0;
     }
 
     AdjMatrixGraph( vector<vector<string>> graphData ) {
         capacity = 5;
-        vertex = new vector<string>( 5 );
-        matrix = new vector<vector<int>>( 5 );
+        vertex = new vector<string>( 5, "" );
+        matrix = new vector<vector<int>>( 6, vector<int>( 6, 0 ) );
         vertCount = 0;
     }
 
@@ -39,15 +39,16 @@ public:
         matrix->clear();
     }
 
-    void createGraph( vector<vector<string>> graphData ) {
-        for( int i = 0; i < graphData.size(); ++i ) {
-            ( *vertex )[i] = ( graphData )[i][0] ;
+    void createGraph( vector<vector<string>> &hold ) {
+        vertCount = hold.size();
+        for( int i = 0; i < hold.size(); ++i ){
+            ( *vertex )[i] = hold[i][0];
         }
 
-        for( int i = 0; i < graphData.size(); ++i ) {
-            for( int j = 1; j < graphData[i].size(); ++j ) {
-                int row = getIndex( ( graphData )[i][j] );
-                ( *matrix )[i][row] = 1;
+        for( int i = 0; i < hold.size(); ++i ){
+            for( int n = 1; n < hold[i].size(); ++n ){
+                int j = getIndex(hold[i][n]);
+                ( *matrix )[i][j] = 1;
             }
         }
     }
@@ -61,6 +62,40 @@ public:
             if( ( *vertex )[i] == val ) {
                 return i;
             }
+        }
+
+        return -1;
+    }
+
+    void insertVertex(string vertex, vector<string>pre, vector<string>suc){
+
+        ( *this->vertex )[vertCount] = vertex;
+
+        //	Shove it in by row for successors
+        for( int i = 0; i < suc.size(); ++i ){
+            int j = getIndex( suc[i] );
+            ( *matrix )[vertCount][j] = 1;
+        }
+
+        //	Shove it in by col for predecessors
+        for( int i = 0; i < pre.size(); ++i ){
+            int j = getIndex( pre[i] );
+            ( *matrix )[j][vertCount] = 1;
+        }
+
+        ++vertCount;
+    }
+
+    void print() {
+        for(int i = 0; i < vertCount; ++i){
+            cout << "VERTEX: " << ( *vertex )[i] << endl;
+            cout << "LEADS TO: " << endl;
+            for(int j = 0; j < vertCount; ++j){
+                if(( *matrix )[i][j]){
+                    cout << ( *vertex )[j] << endl;
+                }
+            }
+            cout << endl;
         }
     }
 

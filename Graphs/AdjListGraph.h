@@ -82,34 +82,22 @@ public:
     }
 
 
-    void insertVertex( string vert, vector<string> predecessor, vector<string> successor ) {
-        AnyList temp;
-        ( *vertex ).push_back( "vert" );
-        vertCount++;
-        capacity++;
+    void insertVertex( string vertex, vector<string> pre, vector<string> suc ){
 
-        for( int i = 0;i < predecessor.size();i++) {
-            if( predecessor[i] == (*vertex)[0] ) {
-                ( *myList )[0].insert(vert);
-            }
-            if( predecessor[i] == (*vertex)[1] ) {
-                ( *myList )[1].insert(vert);
-            }
-            if( predecessor[i] == (*vertex)[2] ) {
-                ( *myList )[2].insert(vert);
-            }
-            if( predecessor[i] == (*vertex)[3] ) {
-                ( *myList )[3].insert(vert);
-            }
-            if( predecessor[i] == (*vertex)[4] ) {
-                ( *myList )[4].insert(vert);
-            }
+        //	Pushes successors
+        ( *this->vertex )[vertCount] = vertex;
+        for(int i = 0; i < suc.size(); ++i){
+            ( *myList )[vertCount].push_back(suc[i]);
         }
 
-        for(int i = 0; i < successor.size();i++) {
-            temp.insert( successor[i] );
+        //	Pushes successor as current vertex to the precedecessors
+        for(int i = 0; i < pre.size(); ++i){
+            for(int j = 0; j < vertCount; ++j){
+                if(pre[i] == ( *this->vertex )[j]){
+                    ( *myList )[j].push_back(vertex);
+                }
+            }
         }
-        ( *myList ).push_back( temp );
 
     }
 
