@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/steph/Desktop/Data-Structures-C/Graphs/AdjListGraph.h
+vector
+-
+string
+-
+iostream
+-
+AnyList.h
+C:/Users/steph/Desktop/Data-Structures-C/Graphs/AnyList.h
+
+C:/Users/steph/Desktop/Data-Structures-C/Graphs/AdjMatrixGraph.h
+vector
+-
+string
+-
+iostream
+-
+
+C:/Users/steph/Desktop/Data-Structures-C/Graphs/AnyList.h
+string
+-
+list
+-
+iostream
+-
+
+C:/Users/steph/Desktop/Data-Structures-C/Graphs/main.cpp
+iostream
+-
+AdjListGraph.h
+C:/Users/steph/Desktop/Data-Structures-C/Graphs/AdjListGraph.h
+AdjMatrixGraph.h
+C:/Users/steph/Desktop/Data-Structures-C/Graphs/AdjMatrixGraph.h
+

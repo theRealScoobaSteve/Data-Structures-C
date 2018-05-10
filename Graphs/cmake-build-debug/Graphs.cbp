@@ -85,6 +85,12 @@
 		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Graphs/AdjListGraph.h">
 			<Option target="Graphs"/>
 		</Unit>
+		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Graphs/AdjMatrixGraph.h">
+			<Option target="Graphs"/>
+		</Unit>
+		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Graphs/AnyList.h">
+			<Option target="Graphs"/>
+		</Unit>
 		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Graphs/main.cpp">
 			<Option target="Graphs"/>
 		</Unit>
