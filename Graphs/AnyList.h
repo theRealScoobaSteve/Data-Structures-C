@@ -15,6 +15,10 @@ class AnyList {
 public:
     AnyList() {  }
 
+//    AnyList( AnyList & copy ) {
+//        this->head = copy->head;
+//    }
+
     ~AnyList() { head.clear(); }
 
     void insert( string value ) {

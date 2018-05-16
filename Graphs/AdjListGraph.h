@@ -28,6 +28,61 @@ public:
         vertCount = 0;
     }
 
+    // copy constructor
+    AdjListGraph( const AdjListGraph &temp ) {
+        capacity = temp.capacity;
+        vertCount = temp.vertCount;
+        myList = new vector<AnyList>( capacity );
+        vertex = new vector<string>( capacity );
+
+        for( int i = 0; i < temp.capacity; i++ ) {
+            myList[i] = temp.myList[i];
+            vertex[i] = temp.vertex[i];
+
+        }
+
+    }
+
+    // move constructor
+    AdjListGraph( AdjListGraph&& copy ):
+            vertCount( copy.vertCount ), capacity( copy.capacity ),
+            vertex( copy.vertex ), myList( copy.myList ){
+        copy.myList = nullptr;
+        copy.vertex = nullptr;
+    }
+
+    //copy assignment almost got it to work
+    AdjListGraph& operator=( AdjListGraph& copy ){
+        emptyGraph();
+
+        vertCount = copy.vertCount;
+        capacity = copy.capacity;
+
+        for(int i = 0; i < capacity; ++i){
+
+//            if(copy.myList[i]){
+//                myList[i] = new AnyList( copy->myList[i] );
+//            }
+//
+//            else{
+//                myList[i] = nullptr;
+//            }
+
+            myList[i] = copy.myList[i];
+        }
+    }
+
+    // move assignment
+    AdjListGraph& operator=( AdjListGraph&& copy ){
+        emptyGraph();
+        vertCount = copy.vertCount;
+        capacity = copy.capacity;
+        vertex = copy.vertex;
+        myList = copy.myList;
+        copy.vertex = nullptr;
+        copy.myList= nullptr;
+    }
+
     ~AdjListGraph() { myList->clear(); vertex->clear(); }
 
 
@@ -83,23 +138,44 @@ public:
     }
 
 
-//    void insertVertex( string vertex, vector<string> pre, vector<string> suc ){
-//
-//
-//        ( *this->vertex )[vertCount] = vertex;
-//        for(int i = 0; i < suc.size(); ++i){
-//            ( *myList )[vertCount].push_back(suc[i]);
-//        }
-//
-//        for(int i = 0; i < pre.size(); ++i){
-//            for(int j = 0; j < vertCount; ++j){
-//                if(pre[i] == ( *this->vertex )[j]){
-//                    ( *myList )[j].push_back(vertex);
-//                }
-//            }
-//        }
-//
-//    }
+    void insertVertex( string vert, vector<string> predecessor, vector<string> successor )
+    {
+        AnyList temp;
+        ( *vertex ).push_back(vert);
+        vertCount++;
+        capacity++;
+
+        //find predecessors and insert the new vertex into them
+        for( int i = 0; i < predecessor.size(); i++ ) {
+            if( predecessor[i] == ( *vertex )[0] ) {
+                ( *myList )[0].insert(vert);
+
+            }
+            if( predecessor[i] == ( *vertex )[1]) {
+                ( *myList )[1].insert( vert );
+
+            }
+            if( predecessor[i] == ( *vertex )[2] ) {
+                ( *myList )[2].insert(vert);
+
+            }
+            if(predecessor[i] == ( *vertex )[3]) {
+                ( *myList )[3].insert(vert);
+
+            }
+            if( predecessor[i] == ( *vertex )[4] )
+            {
+                ( *myList )[4].insert( vert );
+            }
+        }
+
+        //insert successors
+        for( int i = 0; i < successor.size();i++ ) {
+            temp.insert( successor[i] );
+        }
+        ( *myList ).push_back( temp );
+
+    }
 
     void print() {
         for( int i = 0; i < capacity; i++ ) {

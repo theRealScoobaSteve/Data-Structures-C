@@ -14,7 +14,7 @@ class AdjMatrixGraph {
 
 public:
     AdjMatrixGraph() {
-        capacity = 5;
+        capacity = 7;
         vertex = new vector<string>( 7, "" );
         matrix = new vector<vector<int>>( 7, vector<int>( 7, 0 ) );
         vertCount = 0;
@@ -33,6 +33,15 @@ public:
         matrix = new vector<vector<int>>( 7, vector<int>( 7, 0 ) );
         vertCount = 0;
     }
+
+    // move constructor
+    AdjMatrixGraph( AdjMatrixGraph&& copy):vertCount( copy.vertCount ),
+                  capacity( copy.capacity ), vertex( copy.vertex ), matrix( copy.matrix ) {
+        copy.vertex = nullptr;
+        copy.matrix = nullptr;
+    }
+
+
 
     ~AdjMatrixGraph() {
         vertex->clear();

@@ -18,8 +18,7 @@ int main() {
     vector<string> pre {"D", "F"};
     vector<string> suc {"A", "B"};
 
-    //Having major issues with these methods cant figure it out
-    //table1.insertVertex(G, pre, suc);
+    table1.insertVertex(G, pre, suc);
     table2.insertVertex(G, pre, suc);
 
     cout << "THIS IS ADJLIST GRAPH" << endl;
