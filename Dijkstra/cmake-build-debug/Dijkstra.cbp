@@ -88,6 +88,12 @@
 		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Dijkstra/main.cpp">
 			<Option target="Dijkstra"/>
 		</Unit>
+		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Dijkstra/msTreeType.h">
+			<Option target="Dijkstra"/>
+		</Unit>
+		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Dijkstra/weightedGraphType.h">
+			<Option target="Dijkstra"/>
+		</Unit>
 		<Unit filename="C:/Users/steph/Desktop/Data-Structures-C/Dijkstra/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

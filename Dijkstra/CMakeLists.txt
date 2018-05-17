@@ -3,4 +3,4 @@ project(Dijkstra)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Dijkstra main.cpp graphType.h)
+add_executable(Dijkstra main.cpp graphType.h weightedGraphType.h msTreeType.h)

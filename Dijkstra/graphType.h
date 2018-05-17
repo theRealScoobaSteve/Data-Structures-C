@@ -12,6 +12,10 @@
 #include <vector>
 #include <list>
 using namespace std;
+struct node {
+    int vertex;
+    int weight;
+};
 
 class graphType {
 public:
@@ -45,7 +49,7 @@ public:
             infile >> adjacentVertex;
 
             while( adjacentVertex != -999 ) {
-                graph[vertex].push_back(  adjacentVertex );
+                graph[vertex].push_back( adjacentVertex );
                 infile >> adjacentVertex;
             }
         }
@@ -158,6 +162,11 @@ private:
     // Function to perform the depth first traversal of the graph at a node specified by the parameter vertex
     // This function is used by the public member functions.
     void dft( int v, bool visited[] ) {
+        visited[v] = true;
+        cout << " " << v << " ";
+
+        list<int> :: iterator it;
+
 
     }
 
