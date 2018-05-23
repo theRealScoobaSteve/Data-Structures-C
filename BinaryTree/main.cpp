@@ -8,19 +8,22 @@ void deleteTree( tree<string> * );
 
 int main() {
     ofstream fout;
-    fout.open( "C:\\Users\\steph\\Desktop\\Data-Structures-C\\BinaryTree\\output.txt" );
+    fout.open( "output.txt" );
     try {
         tree<string> *tree = create();
         testFind( tree );
         testRemove( tree );
         deleteTree( tree );
-        fout << "All tests passed";
+        cout << "All tests passed";
     }
-    catch( sameVal ) {
+    catch( sameVal e ) {
         fout << "Can't pass 2 of the same values to this tree";
     }
-    catch( emptyTree ) {
+    catch( emptyTree e ) {
         fout << "This tree is empty";
+    }
+    catch( string e ) {
+        cout << e << endl;
     }
     catch( ... ) {
         fout << "Major Issues";
@@ -46,7 +49,12 @@ tree<string> *create() {
     tree<string> *binaryTree = new tree<string>;
     string temp;
     ifstream fin;
-    fin.open( "C:\\Users\\steph\\Desktop\\Data-Structures-C\\BinaryTree\\random.txt" );
+    fin.open( "random.txt" );
+
+    if( !fin ) {
+        cout << "HERE";
+        throw "Cant open file";
+    }
 
     while( fin ) {
         getline( fin, temp );
