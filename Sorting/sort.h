@@ -14,8 +14,9 @@ class Sort
 {
 public:
 
-    Sort(int size);
-    ~Sort();
+    Sort(){}
+    Sort(int size){};
+    virtual ~Sort() {};
 
     virtual void insertAllFromFile( const char *filename, int numItemsToLoad ) = 0;
     virtual void print( ostream &out ) = 0;

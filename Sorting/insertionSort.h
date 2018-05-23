@@ -7,15 +7,11 @@
 
 #include "sort.h"
 
-#include "Sort.h"
-
-
-class InsertionSort: public Sort
-{
+class InsertionSort: public Sort {
 public:
-    InsertionSort( int size ):Sort(size) {}
+    InsertionSort( int size ) { n = size; myAr = new string[size]; }
 
-    ~InsertionSort() {}
+    ~InsertionSort() { delete myAr;}
 
     void insertAllFromFile( const char *filename, int numItemsToLoad ) {
         int i = 0;

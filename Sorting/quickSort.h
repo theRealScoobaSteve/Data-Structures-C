@@ -5,13 +5,13 @@
 #ifndef SORTING_QUICKSORT_H
 #define SORTING_QUICKSORT_H
 
-#include "Sort.h"
+#include "sort.h"
 
 
 class QuickSort: public Sort
 {
 public:
-    QuickSort( int size ):Sort(size) {}
+    QuickSort( int size ) { n = size; myAr = new string[size]; }
 
     ~QuickSort() {
         delete myAr;
@@ -23,14 +23,12 @@ public:
         ifstream fin;
         fin.open( filename );
 
-        if( !fin )
-        {
+        if( !fin ) {
             cout << "Didn't open file\n";
         }
 
 
-        while( fin >> value && i < numItemsToLoad )
-        {
+        while( fin >> value && i < numItemsToLoad ) {
             myAr[i] = value;
             i++;
         }

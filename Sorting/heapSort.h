@@ -7,18 +7,14 @@
 
 #include "sort.h"
 
-#include "Sort.h"
-
 class HeapSort: public Sort
 {
 public:
-    HeapSort( int size ):Sort(size) {
-
-    }
+    HeapSort( int size ) { n = size; myAr = new string[size]; }
 
     ~HeapSort() {
 
-        delete myAr;
+        delete [] myAr;
     }
 
     void heapify( string temp[], int n, int i ) {
@@ -85,9 +81,6 @@ public:
         }
 
     }
-
-
-private:
 
 };
 #endif //SORTING_HEAPSORT_H

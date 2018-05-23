@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/steph/Desktop/Data-Structures-C/Sorting/HeapSort.h
+sort.h
+C:/Users/steph/Desktop/Data-Structures-C/Sorting/sort.h
+
+C:/Users/steph/Desktop/Data-Structures-C/Sorting/InsertionSort.h
+sort.h
+C:/Users/steph/Desktop/Data-Structures-C/Sorting/sort.h
+
+C:/Users/steph/Desktop/Data-Structures-C/Sorting/QuickSort.h
+sort.h
+C:/Users/steph/Desktop/Data-Structures-C/Sorting/sort.h
+
+C:/Users/steph/Desktop/Data-Structures-C/Sorting/main.cpp
+iostream
+-
+HeapSort.h
+C:/Users/steph/Desktop/Data-Structures-C/Sorting/HeapSort.h
+QuickSort.h
+C:/Users/steph/Desktop/Data-Structures-C/Sorting/QuickSort.h
+InsertionSort.h
+C:/Users/steph/Desktop/Data-Structures-C/Sorting/InsertionSort.h
+time.h
+-
+chrono
+-
+
+C:/Users/steph/Desktop/Data-Structures-C/Sorting/sort.h
+iostream
+-
+fstream
+-
+
